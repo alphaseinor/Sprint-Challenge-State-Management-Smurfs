@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 import {smurfFetch} from '../actions/actions.js'
 import Smurf from './Smurf.js'
-
+import Gargamel from './Gargamel.js'
 
 const Smurfs = (props) => {
   const {smurfs, isFetching, isGargamel, error} = props
@@ -14,6 +14,7 @@ const Smurfs = (props) => {
 
   return (
     <section>
+      <Gargamel />
       {error && <p>{error}</p>}
       {isFetching ? <p>...Stork Dropping Smurfs... </p> : smurfs.map(smurf => (
           <Smurf key={smurf.id} smurf={smurf} />
