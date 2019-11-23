@@ -32,7 +32,9 @@ const Gargamel = (props) => {
 
   return (
     <section>
+      <article>
       <form onSubmit={e=>handleSubmit(e)}>
+      <h2>Create-A-Smurf!</h2>
         <label>Name: </label>
         <input
           type="text"
@@ -57,8 +59,9 @@ const Gargamel = (props) => {
           value={value.height}
           onChange={e=>handleChange(e.target.name, e)}
         ></input>
-        <input type="submit" value="Gilgamesh-it!" />
+        <input type="submit" value="Gilgameshit!" />
       </form>
+      </article>
     </section>
   )
 }
