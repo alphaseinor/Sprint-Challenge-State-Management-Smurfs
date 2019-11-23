@@ -12,6 +12,8 @@ import {
 
 const initialState = {
   smurfs: [],
+  isFetching: false,
+  error: null,
 }
 
 export const reducer = (state = initialState, action) => {
@@ -20,32 +22,44 @@ export const reducer = (state = initialState, action) => {
     case FETCH_DATA_START:
       return{
         ...state,
-        smurfs: []
+        smurfs: [],
+        isFetching: true,
+        error: null, 
       }
     case FETCH_DATA_SUCCESS:
       return{
         ...state,
-        smurfs: action.payload
+        smurfs: action.payload,
+        isFetching: false,
+        error: null,
       }
     case FETCH_DATA_FAIL:
       return{
         ...state,
-        smurfs: []
+        smurfs: [],
+        isFetching: false,
+        error: action.payload,
       }
     case POST_DATA_START:
       return{
         ...state,
-        smurfs: []
+        smurfs: [],
+        isFetching: false,
+        error: null,
       }
     case POST_DATA_SUCCESS:
       return{
         ...state,
-        smurfs: [...state.smurfs, action.payload]
+        smurfs: [...state.smurfs, action.payload],
+        isFetching: false,
+        error: null,
       }
     case POST_DATA_FAIL:
       return{
         ...state,
-        smurfs: []
+        smurfs: [],
+        isFetching: false,
+        error: action.payload,
       }
     default:
       return state;
