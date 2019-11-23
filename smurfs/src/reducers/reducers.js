@@ -14,6 +14,7 @@ const initialState = {
   smurfs: [],
   isFetching: false,
   error: null,
+  isGargamel: false,
 }
 
 export const reducer = (state = initialState, action) => {
@@ -24,7 +25,8 @@ export const reducer = (state = initialState, action) => {
         ...state,
         smurfs: [],
         isFetching: true,
-        error: null, 
+        error: null,
+        isGargamel: false,
       }
     case FETCH_DATA_SUCCESS:
       return{
@@ -32,6 +34,7 @@ export const reducer = (state = initialState, action) => {
         smurfs: action.payload,
         isFetching: false,
         error: null,
+        isGargamel: false,
       }
     case FETCH_DATA_FAIL:
       return{
@@ -39,6 +42,7 @@ export const reducer = (state = initialState, action) => {
         smurfs: [],
         isFetching: false,
         error: action.payload,
+        isGargamel: false,
       }
     case POST_DATA_START:
       return{
@@ -46,6 +50,7 @@ export const reducer = (state = initialState, action) => {
         smurfs: [],
         isFetching: false,
         error: null,
+        isGargamel: true,
       }
     case POST_DATA_SUCCESS:
       return{
@@ -53,6 +58,7 @@ export const reducer = (state = initialState, action) => {
         smurfs: [...state.smurfs, action.payload],
         isFetching: false,
         error: null,
+        isGargamel: false,
       }
     case POST_DATA_FAIL:
       return{
@@ -60,6 +66,7 @@ export const reducer = (state = initialState, action) => {
         smurfs: [],
         isFetching: false,
         error: action.payload,
+        isGargamel: false,
       }
     default:
       return state;
