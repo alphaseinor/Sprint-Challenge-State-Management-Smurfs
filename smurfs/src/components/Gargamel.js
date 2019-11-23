@@ -16,6 +16,10 @@ const Gargamel = (props) => {
     setValue({...value, [name]: e.target.value})
   }
 
+  const handleSubmit = () => {
+
+  }
+
   return (
     <section>
       <form>
@@ -31,9 +35,9 @@ const Gargamel = (props) => {
         <input
           type="text"
           placeholder="Age"
-          name="Age"
+          name="age"
           value={value.age}
-          onChange={e=>handleChange(e.target.age, e)}
+          onChange={e=>handleChange(e.target.name, e)}
         ></input>
         <label>Height: </label>
         <input
@@ -41,7 +45,7 @@ const Gargamel = (props) => {
           placeholder="Height"
           name="height"
           value={value.height}
-          onChange={e=>handleChange(e.target.height, e)}
+          onChange={e=>handleChange(e.target.name, e)}
         ></input>
         <input type="submit" value="Gilgamesh-it!" />
       </form>
