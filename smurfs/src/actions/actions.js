@@ -25,6 +25,10 @@ export const smurfFetch = () => dispatch => {
 
 // s*** we have to be Gargamel too?... hmmm I guess I could just make them all males and have a stork dispatch them... decisions decisions...
 
+// LOL ``` "Error": "Ya gone did smurfed! Name/Age/Height are all required to create a smurf in the smurf DB."```
+
+//this is going to be the death of me... thank you postman for doing this to me.
+
 export const gargamel = (smurf) => dispatch => {
   dispatch({ type: POST_DATA_START });
   axios.post('http://localhost:3333/smurfs', smurf)
