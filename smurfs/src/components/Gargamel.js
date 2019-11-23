@@ -4,7 +4,7 @@ import {gargamel} from '../actions/actions.js'
 
 
 const Gargamel = (props) => {
-  const {gargamel, isGargamel, smurfs} = props
+  const {gargamel} = props
 
   const [value, setValue] = useState({
     name: '',
@@ -16,13 +16,23 @@ const Gargamel = (props) => {
     setValue({...value, [name]: e.target.value})
   }
 
-  const handleSubmit = () => {
-
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    gargamel({
+      name: value.name,
+      age: value.age,
+      height: value.height
+    })
+    setValue({
+      name: '',
+      age: '',
+      height: '',
+    })
   }
 
   return (
     <section>
-      <form>
+      <form onSubmit={e=>handleSubmit(e)}>
         <label>Name: </label>
         <input
           type="text"

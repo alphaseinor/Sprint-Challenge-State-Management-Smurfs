@@ -36,6 +36,7 @@ export const gargamel = (smurf) => dispatch => {
       .then(res => {
           console.log(res.data);
           dispatch({ type: POST_DATA_SUCCESS, payload: smurf });
+          dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data });
       })
       .catch(error => {
           console.log(error);

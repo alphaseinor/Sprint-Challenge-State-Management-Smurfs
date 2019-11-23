@@ -5,7 +5,7 @@ const Smurf = (props) => {
   console.log(`in Smurf`)
   console.log(props)
   return (
-    <article>
+    <article key={props.id}>
       <h3>{smurf.name}</h3>
       <ul>
         <li>{`Age: ${smurf.age}`}</li>

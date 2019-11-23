@@ -16,7 +16,7 @@ const Smurfs = (props) => {
     <section>
       <Gargamel />
       {error && <p>{error}</p>}
-      {isFetching ? <p>...Stork Dropping Smurfs... </p> : smurfs.map(smurf => (
+      {(isFetching  || isGargamel) ? <p>...Gargamel Created New Smurf!...</p> : smurfs.map(smurf => (
           <Smurf key={smurf.id} smurf={smurf} />
         ))
       }

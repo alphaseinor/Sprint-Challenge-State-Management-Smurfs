@@ -3,13 +3,6 @@ import {
   POST_DATA_START, POST_DATA_SUCCESS, POST_DATA_FAIL
 } from '../actions/actions.js'
 
-// postData = {
-//   name: "Brainey",
-//   age: 200,
-//   height: "5cm",
-// }
-
-
 const initialState = {
   smurfs: [],
   isFetching: false,
