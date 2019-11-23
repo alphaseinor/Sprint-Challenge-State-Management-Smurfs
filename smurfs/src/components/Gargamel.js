@@ -59,7 +59,7 @@ const Gargamel = (props) => {
           value={value.height}
           onChange={e=>handleChange(e.target.name, e)}
         ></input>
-        <input type="submit" value="Gilgameshit!" />
+        <input type="submit" value="Gargamel-it!" />
       </form>
       </article>
     </section>
