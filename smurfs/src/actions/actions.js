@@ -15,10 +15,11 @@ export const smurfFetch = () => dispatch => {
 
   axios.get('http://localhost:3333/smurfs')
       .then(res => {
-          console.log(res.data); //yes it works!!!
+          console.log(`BH:Actions:smurfFetch:axios.get.then ${res.data}`);
           dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data });
       })
       .catch(error => {
+          console.log(`BH:Actions:smurfFetch:axios.get.catch: ${error}`)
           dispatch({ type: FETCH_DATA_FAIL, payload: error });
       })
 }

@@ -5,17 +5,17 @@ import Smurf from './Smurf.js'
 
 
 const Smurfs = (props) => {
-  const {smurfs, isFetching, isGargamel} = props
+  const {smurfs, isFetching, isGargamel, error} = props
+  console.log(smurfs)
 
   useEffect(() => {
-    props.smurfFetch();
+    props.smurfFetch()
   }, [])
 
   return (
     <section>
-      {isFetching && <p>Stork Dropping Smurfs</p>}
-      {isFetching && !isGargamel && 
-        smurfs.map(smurf => (
+      {error && <p>{error}</p>}
+      {isFetching ? <p>...Stork Dropping Smurfs... </p> : smurfs.map(smurf => (
           <Smurf key={smurf.id} smurf={smurf} />
         ))
       }
@@ -28,6 +28,7 @@ const mapStateToProps = (state) => {
     smurfs: state.smurfs,
     isFetching: state.isFetching,
     isGargamel: state.isGargamel,
+    error: state.error,
   }
 }
 
