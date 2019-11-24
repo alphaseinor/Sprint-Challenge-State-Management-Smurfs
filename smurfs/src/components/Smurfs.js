@@ -10,7 +10,7 @@ const Smurfs = (props) => {
 
   useEffect(() => {
     props.smurfFetch()
-  }, [])
+  })
 
   return (
     <section>
